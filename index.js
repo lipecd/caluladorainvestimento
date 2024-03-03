@@ -15,6 +15,9 @@ function CalcularInvestimento() {
             this.modelo = modelo
             this.valor = valor
         }
+        apresentar() {
+            return `${this.marca} ${this.modelo} que custa R$${this.valor}.`
+        }
     }
     
     const gol = new Carro('vw', 'gol', 30000)
@@ -27,9 +30,9 @@ function CalcularInvestimento() {
     console.log(`O valor final do investimento é R$${jurosCompostos}.`)
     for (const carro of listaCarros) {
         if(carro.valor < jurosCompostos) {
-            console.log(`Consegue comprar o carro ${carro.marca} ${carro.modelo} que custa R$${carro.valor}`);
+            console.log(`Consegue comprar o carro ${carro.apresentar()}`);
         } else {
-            console.log(`Não consegue comprar o carro ${carro.marca} ${carro.modelo} que custa R$${carro.valor}`);
+            console.log(`Não consegue comprar o carro ${carro.apresentar()}`);
 
         }
     }
